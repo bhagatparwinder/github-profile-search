@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
 })
 
 export class ProfileComponent {
+    user:Object;
     constructor(private _githubService:GithubService){
         this._githubService.getUser().subscribe(user => {
-            console.log(user);
+            this.user = user;
         })
     }
 }
